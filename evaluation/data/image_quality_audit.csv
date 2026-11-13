@@ -1,0 +1,61 @@
+﻿case_id,source_revision,retrieval,downloaded_width,downloaded_height,photo_crop_width,photo_crop_height,v1_crop_long_edge,rendered_content_width,rendered_content_height,canvas_width,canvas_height,current_crop_long_edge,change_from_v2
+E-001,same_original,downloaded rendition,1280,1707,1280,1707,640,540,720,768,768,1707,unchanged
+E-002,same_original,original,2448,3264,1927,1209,377,720,452,768,768,1927,unchanged
+E-003,same_original,original,2448,3264,870,986,193,635,720,768,768,986,unchanged
+E-004,same_original,original,2448,3264,857,1510,296,409,720,768,768,1510,unchanged
+E-005,same_original,original,2275,3235,458,885,176,373,720,768,768,885,unchanged
+E-006,same_original,downloaded rendition,1280,1839,691,1747,608,285,720,768,768,1747,unchanged
+E-007,same_original,original,2724,3299,2724,3299,640,595,720,768,768,3299,unchanged
+E-008,same_original,downloaded rendition,1280,1945,1280,1945,640,474,720,768,768,1945,unchanged
+E-009,same_original,original,3000,4000,3000,4000,640,540,720,768,768,4000,unchanged
+E-010,same_original,original,2448,3264,562,597,117,678,720,768,768,597,unchanged
+E-011,same_original,downloaded rendition,1280,1707,1280,1707,640,540,720,768,768,1707,unchanged
+E-012,same_original,original,2448,3264,1361,1622,317,604,720,768,768,1622,unchanged
+E-013,replacement,original,572,489,572,489,640,720,616,768,768,572,replaced
+E-014,replacement,original,2448,3264,757,692,640,720,658,768,768,757,replaced
+E-015,same_original,original,3264,2448,932,699,183,720,540,768,768,932,unchanged
+E-016,same_original,downloaded rendition,1280,1344,1280,1344,640,686,720,768,768,1344,unchanged
+E-017,same_original,original,1824,4000,1824,3830,612,343,720,768,768,3830,unchanged
+E-018,same_original,original,1824,4000,1824,2095,335,627,720,768,768,2095,unchanged
+E-019,same_original,original,3264,2448,1370,1448,284,681,720,768,768,1448,unchanged
+E-020,same_original,downloaded rendition,1280,1707,653,529,245,720,583,768,768,653,unchanged
+E-021,same_original,downloaded rendition,1280,853,602,520,300,720,622,768,768,602,unchanged
+E-022,same_original,downloaded rendition,1280,1707,1280,1707,640,540,720,768,768,1707,unchanged
+E-023,same_original,original,2448,3264,1959,2541,499,555,720,768,768,2541,unchanged
+E-024,replacement,downloaded rendition,1280,853,397,614,243,466,720,768,768,614,unchanged
+E-025,same_original,downloaded rendition,1280,1707,1203,871,451,720,521,768,768,1203,unchanged
+E-026,same_original,downloaded rendition,1280,1707,1241,1110,465,720,644,768,768,1241,unchanged
+E-027,same_original,original,3264,2448,500,479,98,720,690,768,768,500,unchanged
+E-028,same_original,downloaded rendition,1280,720,1280,720,640,720,405,768,768,1280,unchanged
+E-029,same_original,original,2448,3264,1890,1512,370,720,576,768,768,1890,unchanged
+E-030,same_original,original,3264,2448,1050,879,205,720,603,768,768,1050,unchanged
+E-031,replacement,original,2448,3264,506,588,121,620,720,768,768,588,replaced
+E-032,replacement,downloaded rendition,1280,644,985,451,142,720,330,768,768,985,unchanged
+E-033,same_original,downloaded rendition,1280,2274,1280,2274,640,405,720,768,768,2274,unchanged
+E-034,same_original,existing rendition,640,139,640,139,640,720,156,768,768,640,unchanged
+E-035,same_original,original,2448,3264,1011,649,198,720,462,768,768,1011,unchanged
+E-036,same_original,original,500,231,500,231,500,720,333,768,768,500,unchanged
+E-037,replacement,downloaded rendition,960,1280,576,947,365,438,720,768,768,947,unchanged
+E-038,same_original,original,3264,2448,1124,1034,220,720,662,768,768,1124,unchanged
+E-039,same_original,existing rendition,480,640,480,640,640,540,720,768,768,640,unchanged
+E-040,same_original,original,2448,3264,832,455,163,720,394,768,768,832,unchanged
+E-041,same_original,original,2448,3264,716,624,141,720,627,768,768,716,unchanged
+E-042,same_original,original,2448,3264,1992,1810,390,720,654,768,768,1992,unchanged
+E-043,same_original,original,2448,3264,1082,1426,280,546,720,768,768,1426,unchanged
+E-044,same_original,original,2448,3264,1017,1282,251,571,720,768,768,1282,unchanged
+E-045,replacement,downloaded rendition,960,1438,711,1266,467,404,720,768,768,1266,replaced
+E-046,same_original,original,2448,3264,772,1054,207,527,720,768,768,1054,unchanged
+E-047,same_original,downloaded rendition,1280,960,601,816,408,530,720,768,768,816,unchanged
+E-048,replacement,downloaded rendition,960,720,960,720,640,720,540,768,768,960,replaced
+E-049,same_original,original,2448,3264,589,1104,216,384,720,768,768,1104,unchanged
+E-050,same_original,downloaded rendition,1280,1920,1280,1920,640,480,720,768,768,1920,unchanged
+E-051,same_original,downloaded rendition,1280,1707,1191,973,447,720,588,768,768,1191,unchanged
+E-052,same_original,original,2448,3264,1072,1359,267,568,720,768,768,1359,unchanged
+E-053,same_original,original,2448,3264,459,515,101,642,720,768,768,515,unchanged
+E-054,same_original,original,2049,1537,772,577,241,720,538,768,768,772,unchanged
+E-055,same_original,original,2448,3264,855,1008,236,611,720,768,768,1008,unchanged
+E-056,same_original,original,2448,3264,507,905,177,403,720,768,768,905,unchanged
+E-057,same_original,original,2448,3264,613,711,139,621,720,768,768,711,unchanged
+E-058,replacement,downloaded rendition,960,720,874,604,101,720,498,768,768,874,replaced
+E-059,replacement,downloaded rendition,960,720,720,691,640,720,691,768,768,720,replaced
+E-060,same_original,downloaded rendition,1280,863,1280,863,640,720,485,768,768,1280,unchanged

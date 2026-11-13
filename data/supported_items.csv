@@ -1,0 +1,17 @@
+item_id,item_name,aliases,material,campus_context,scope,taco_label,route_id
+plastic_beverage_bottle,Plastic beverage bottle,PET drink bottle | plastic water bottle | plastic soda bottle,Plastic,Canteen and public areas,A clear plastic bottle sold as beverage packaging.,Clear plastic bottle,plastic_bottles
+glass_beverage_bottle,Glass beverage bottle,glass soda bottle | glass drink bottle,Glass,Canteen and hostels,A glass bottle sold as beverage packaging.,Glass bottle,glass_bottles
+aluminium_beverage_can,Aluminium beverage can,aluminum beverage can | aluminium soda can | aluminum drink can,Aluminium,Canteen and public areas,An aluminium drink can.,Drink can,metal
+metal_food_can,Metal food can,tin food can | steel food can | tinned food can,Metal,Hostels and canteen,A metal can used to package food.,Food Can,metal
+office_paper,Office paper,printer paper | copy paper | plain printout,Paper,Classrooms and library,"Ordinary, uncoated printer or copy paper.",Normal paper,paper
+corrugated_cardboard_box,Corrugated cardboard box,corrugated carton | corrugated shipping box | corrugated delivery box,Corrugated cardboard,Hostels and public areas,A corrugated paperboard shipping or delivery box.,Corrugated carton,paper
+magazine_paper,Magazine or catalogue paper,printed magazine | magazine page | printed catalogue page,Paper,Library and hostels,"An ordinary printed paper magazine or catalogue, or a page from one.",Magazine paper,paper
+plain_paper_bag,Plain paper bag,uncoated paper bag | plain paper carrier bag,Paper,Canteen and public areas,An uncoated paper carrier bag.,Paper bag,paper
+paper_tissue,Paper tissue,facial tissue | disposable tissue,Tissue paper,"Classrooms, hostels and canteen",A disposable facial tissue.,Tissues,general_waste
+plastic_shopping_bag,Plastic shopping bag,plastic carrier bag | plastic grocery bag,Plastic film,Hostels and public areas,A single-use plastic carrier bag with handles.,Single-use carrier bag,other_plastics
+disposable_plastic_cup,Disposable plastic cup,single-use plastic cup | plastic takeaway cup,Rigid plastic,Canteen,A single-use rigid plastic drink cup.,Disposable plastic cup,other_plastics
+disposable_plastic_cutlery,Disposable plastic cutlery,plastic fork | plastic spoon | plastic knife,Rigid plastic,Canteen,"A single-use plastic fork, spoon or knife.",Plastic utensils,other_plastics
+beverage_carton,Beverage carton,milk carton | juice carton | drink carton,Composite beverage carton,Canteen and hostels,"A carton used to package milk, juice or another beverage.",Drink carton,beverage_cartons
+foil_lined_snack_packet,Foil-lined snack packet,foil-lined crisp packet | foil-lined chip bag,Plastic with metallic lining,"Canteen, hostels and public areas",A plastic snack packet with a confirmed metallic inner lining.,Crisp packet,general_waste
+glass_food_jar,Glass food jar,glass jam jar | glass sauce jar,Glass,Hostels and canteen,A glass jar used for food or sauces.,Glass jar,glass_containers
+solid_food_scraps,Solid food scraps,plate scraps | solid food leftovers | banana peel,Food organics,Canteen,"Solid meal scraps and fruit peels separated from packaging, cutlery and liquids.",Food waste,food_waste

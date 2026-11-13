@@ -1,0 +1,333 @@
+{
+  "rules_version": "1.0.0",
+  "jurisdiction": "Lingnan University, Hong Kong",
+  "match_key": "item_id",
+  "max_clarification_rounds": 2,
+  "supported_advice": "Return the fixed disposal_advice for the confirmed item_id.",
+  "ambiguous_item": "Ask one targeted question about the item's identity, material or object type. Ask only when the answer could resolve the match.",
+  "no_clear_object": "Please retake the photo with one main item clearly visible.",
+  "unsupported_item": "This item is outside the current guide. Check the bin label or ask campus staff for the correct disposal route.",
+  "unresolved_item": "I could not confirm the item. Retake the photo or check with campus staff before disposal.",
+  "rules": [
+    {
+      "item_id": "plastic_beverage_bottle",
+      "item_name": "Plastic beverage bottle",
+      "aliases": [
+        "PET drink bottle",
+        "plastic water bottle",
+        "plastic soda bottle"
+      ],
+      "material": "Plastic",
+      "taco_label": "Clear plastic bottle",
+      "campus_context": "Canteen and public areas",
+      "scope": "A clear plastic bottle sold as beverage packaging.",
+      "route_id": "plastic_bottles",
+      "destination_scope": "campus",
+      "destination": "Plastic bottle smart recycling bin, G/F, Lau Lee Yuen Haan Amenities Building",
+      "disposal_advice": "Empty and rinse the bottle. Put it in the campus smart recycling bin labelled for plastic bottles.",
+      "source_ids": [
+        "LU_SMART_BINS",
+        "EPD_FAQ"
+      ]
+    },
+    {
+      "item_id": "glass_beverage_bottle",
+      "item_name": "Glass beverage bottle",
+      "aliases": [
+        "glass soda bottle",
+        "glass drink bottle"
+      ],
+      "material": "Glass",
+      "taco_label": "Glass bottle",
+      "campus_context": "Canteen and hostels",
+      "scope": "A glass bottle sold as beverage packaging.",
+      "route_id": "glass_bottles",
+      "destination_scope": "campus",
+      "destination": "Glass bottle smart recycling bin, G/F, Lau Lee Yuen Haan Amenities Building",
+      "disposal_advice": "Remove the cap and rinse the bottle. Put it in the campus smart recycling bin labelled for glass bottles.",
+      "source_ids": [
+        "LU_SMART_BINS",
+        "EPD_FAQ"
+      ]
+    },
+    {
+      "item_id": "aluminium_beverage_can",
+      "item_name": "Aluminium beverage can",
+      "aliases": [
+        "aluminum beverage can",
+        "aluminium soda can",
+        "aluminum drink can"
+      ],
+      "material": "Aluminium",
+      "taco_label": "Drink can",
+      "campus_context": "Canteen and public areas",
+      "scope": "An aluminium drink can.",
+      "route_id": "metal",
+      "destination_scope": "campus",
+      "destination": "Metal smart recycling bin, G/F, Lau Lee Yuen Haan Amenities Building",
+      "disposal_advice": "Empty and rinse the can. Put it in the campus smart recycling bin labelled for metal.",
+      "source_ids": [
+        "LU_RECYCLE",
+        "LU_SMART_BINS",
+        "EPD_FAQ"
+      ]
+    },
+    {
+      "item_id": "metal_food_can",
+      "item_name": "Metal food can",
+      "aliases": [
+        "tin food can",
+        "steel food can",
+        "tinned food can"
+      ],
+      "material": "Metal",
+      "taco_label": "Food Can",
+      "campus_context": "Hostels and canteen",
+      "scope": "A metal can used to package food.",
+      "route_id": "metal",
+      "destination_scope": "community",
+      "destination": "GREEN@COMMUNITY metal collection",
+      "disposal_advice": "Empty and rinse the food can. Take it to GREEN@COMMUNITY for metal recycling.",
+      "source_ids": [
+        "EPD_FAQ"
+      ]
+    },
+    {
+      "item_id": "office_paper",
+      "item_name": "Office paper",
+      "aliases": [
+        "printer paper",
+        "copy paper",
+        "plain printout"
+      ],
+      "material": "Paper",
+      "taco_label": "Normal paper",
+      "campus_context": "Classrooms and library",
+      "scope": "Ordinary, uncoated printer or copy paper.",
+      "route_id": "paper",
+      "destination_scope": "campus",
+      "destination": "Campus paper recycling bin",
+      "disposal_advice": "Keep the paper dry and remove attachments such as paper clips. Put the paper in a campus paper recycling bin.",
+      "source_ids": [
+        "LU_RECYCLE",
+        "EPD_FAQ"
+      ]
+    },
+    {
+      "item_id": "corrugated_cardboard_box",
+      "item_name": "Corrugated cardboard box",
+      "aliases": [
+        "corrugated carton",
+        "corrugated shipping box",
+        "corrugated delivery box"
+      ],
+      "material": "Corrugated cardboard",
+      "taco_label": "Corrugated carton",
+      "campus_context": "Hostels and public areas",
+      "scope": "A corrugated paperboard shipping or delivery box.",
+      "route_id": "paper",
+      "destination_scope": "campus",
+      "destination": "Campus paper collection point marked for cardboard",
+      "disposal_advice": "Flatten the box, remove tape and keep it dry. Use a campus paper collection point marked for cardboard, or take it to GREEN@COMMUNITY.",
+      "source_ids": [
+        "LU_RECYCLE",
+        "EPD_FAQ"
+      ]
+    },
+    {
+      "item_id": "magazine_paper",
+      "item_name": "Magazine or catalogue paper",
+      "aliases": [
+        "printed magazine",
+        "magazine page",
+        "printed catalogue page"
+      ],
+      "material": "Paper",
+      "taco_label": "Magazine paper",
+      "campus_context": "Library and hostels",
+      "scope": "An ordinary printed paper magazine or catalogue, or a page from one.",
+      "route_id": "paper",
+      "destination_scope": "community",
+      "destination": "GREEN@COMMUNITY paper collection",
+      "disposal_advice": "Remove plastic wrapping and keep the paper dry. Take it to GREEN@COMMUNITY for paper recycling.",
+      "source_ids": [
+        "EPD_FAQ"
+      ]
+    },
+    {
+      "item_id": "plain_paper_bag",
+      "item_name": "Plain paper bag",
+      "aliases": [
+        "uncoated paper bag",
+        "plain paper carrier bag"
+      ],
+      "material": "Paper",
+      "taco_label": "Paper bag",
+      "campus_context": "Canteen and public areas",
+      "scope": "An uncoated paper carrier bag.",
+      "route_id": "paper",
+      "destination_scope": "community",
+      "destination": "GREEN@COMMUNITY paper collection",
+      "disposal_advice": "Remove non-paper handles or attachments and keep the bag dry. Take it to GREEN@COMMUNITY for paper recycling.",
+      "source_ids": [
+        "EPD_FAQ"
+      ]
+    },
+    {
+      "item_id": "paper_tissue",
+      "item_name": "Paper tissue",
+      "aliases": [
+        "facial tissue",
+        "disposable tissue"
+      ],
+      "material": "Tissue paper",
+      "taco_label": "Tissues",
+      "campus_context": "Classrooms, hostels and canteen",
+      "scope": "A disposable facial tissue.",
+      "route_id": "general_waste",
+      "destination_scope": "campus",
+      "destination": "Campus general waste bin",
+      "disposal_advice": "Put the tissue in a campus general waste bin.",
+      "source_ids": [
+        "EPD_FAQ"
+      ]
+    },
+    {
+      "item_id": "plastic_shopping_bag",
+      "item_name": "Plastic shopping bag",
+      "aliases": [
+        "plastic carrier bag",
+        "plastic grocery bag"
+      ],
+      "material": "Plastic film",
+      "taco_label": "Single-use carrier bag",
+      "campus_context": "Hostels and public areas",
+      "scope": "A single-use plastic carrier bag with handles.",
+      "route_id": "other_plastics",
+      "destination_scope": "community",
+      "destination": "GREEN@COMMUNITY other plastics collection",
+      "disposal_advice": "Empty and clean the bag. Take it to GREEN@COMMUNITY for other plastics recycling.",
+      "source_ids": [
+        "EPD_FAQ"
+      ]
+    },
+    {
+      "item_id": "disposable_plastic_cup",
+      "item_name": "Disposable plastic cup",
+      "aliases": [
+        "single-use plastic cup",
+        "plastic takeaway cup"
+      ],
+      "material": "Rigid plastic",
+      "taco_label": "Disposable plastic cup",
+      "campus_context": "Canteen",
+      "scope": "A single-use rigid plastic drink cup.",
+      "route_id": "other_plastics",
+      "destination_scope": "community",
+      "destination": "GREEN@COMMUNITY other plastics collection",
+      "disposal_advice": "Empty and rinse the cup. Take it to GREEN@COMMUNITY for other plastics recycling.",
+      "source_ids": [
+        "EPD_FAQ"
+      ]
+    },
+    {
+      "item_id": "disposable_plastic_cutlery",
+      "item_name": "Disposable plastic cutlery",
+      "aliases": [
+        "plastic fork",
+        "plastic spoon",
+        "plastic knife"
+      ],
+      "material": "Rigid plastic",
+      "taco_label": "Plastic utensils",
+      "campus_context": "Canteen",
+      "scope": "A single-use plastic fork, spoon or knife.",
+      "route_id": "other_plastics",
+      "destination_scope": "community",
+      "destination": "GREEN@COMMUNITY other plastics collection",
+      "disposal_advice": "Rinse the cutlery. Take it to GREEN@COMMUNITY for other plastics recycling.",
+      "source_ids": [
+        "EPD_FAQ"
+      ]
+    },
+    {
+      "item_id": "beverage_carton",
+      "item_name": "Beverage carton",
+      "aliases": [
+        "milk carton",
+        "juice carton",
+        "drink carton"
+      ],
+      "material": "Composite beverage carton",
+      "taco_label": "Drink carton",
+      "campus_context": "Canteen and hostels",
+      "scope": "A carton used to package milk, juice or another beverage.",
+      "route_id": "beverage_cartons",
+      "destination_scope": "community",
+      "destination": "GREEN@COMMUNITY beverage carton collection",
+      "disposal_advice": "Cut open and rinse the carton. Remove any plastic cap and take the carton to GREEN@COMMUNITY for beverage carton recycling.",
+      "source_ids": [
+        "EPD_FAQ"
+      ]
+    },
+    {
+      "item_id": "foil_lined_snack_packet",
+      "item_name": "Foil-lined snack packet",
+      "aliases": [
+        "foil-lined crisp packet",
+        "foil-lined chip bag"
+      ],
+      "material": "Plastic with metallic lining",
+      "taco_label": "Crisp packet",
+      "campus_context": "Canteen, hostels and public areas",
+      "scope": "A plastic snack packet with a confirmed metallic inner lining.",
+      "route_id": "general_waste",
+      "destination_scope": "campus",
+      "destination": "Campus general waste bin",
+      "disposal_advice": "Put the foil-lined snack packet in a campus general waste bin.",
+      "source_ids": [
+        "EPD_FAQ"
+      ]
+    },
+    {
+      "item_id": "glass_food_jar",
+      "item_name": "Glass food jar",
+      "aliases": [
+        "glass jam jar",
+        "glass sauce jar"
+      ],
+      "material": "Glass",
+      "taco_label": "Glass jar",
+      "campus_context": "Hostels and canteen",
+      "scope": "A glass jar used for food or sauces.",
+      "route_id": "glass_containers",
+      "destination_scope": "community",
+      "destination": "GREEN@COMMUNITY glass container collection",
+      "disposal_advice": "Remove the lid and rinse the jar. Take it to GREEN@COMMUNITY for glass container recycling.",
+      "source_ids": [
+        "EPD_FAQ"
+      ]
+    },
+    {
+      "item_id": "solid_food_scraps",
+      "item_name": "Solid food scraps",
+      "aliases": [
+        "plate scraps",
+        "solid food leftovers",
+        "banana peel"
+      ],
+      "material": "Food organics",
+      "taco_label": "Food waste",
+      "campus_context": "Canteen",
+      "scope": "Solid meal scraps and fruit peels separated from packaging, cutlery and liquids.",
+      "route_id": "food_waste",
+      "destination_scope": "campus",
+      "destination": "Designated food waste collection at Lingnan, where available",
+      "disposal_advice": "Separate the solid scraps from packaging and cutlery. Use a designated food waste collection point and ask canteen staff where to find it if needed.",
+      "source_ids": [
+        "LU_FOOD",
+        "EPD_FOOD"
+      ]
+    }
+  ]
+}

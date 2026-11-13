@@ -1,0 +1,60 @@
+{"case_id": "E-001", "observation": {"kind": "confirmed", "confirmed_item_id": "plastic_beverage_bottle"}, "replies": []}
+{"case_id": "E-002", "observation": {"kind": "confirmed", "confirmed_item_id": "plastic_beverage_bottle"}, "replies": []}
+{"case_id": "E-003", "observation": {"kind": "confirmed", "confirmed_item_id": "plastic_beverage_bottle"}, "replies": []}
+{"case_id": "E-004", "observation": {"kind": "confirmed", "confirmed_item_id": "glass_beverage_bottle"}, "replies": []}
+{"case_id": "E-005", "observation": {"kind": "confirmed", "confirmed_item_id": "glass_beverage_bottle"}, "replies": []}
+{"case_id": "E-006", "observation": {"kind": "confirmed", "confirmed_item_id": "glass_beverage_bottle"}, "replies": []}
+{"case_id": "E-007", "observation": {"kind": "confirmed", "confirmed_item_id": "aluminium_beverage_can"}, "replies": []}
+{"case_id": "E-008", "observation": {"kind": "confirmed", "confirmed_item_id": "aluminium_beverage_can"}, "replies": []}
+{"case_id": "E-009", "observation": {"kind": "confirmed", "confirmed_item_id": "aluminium_beverage_can"}, "replies": []}
+{"case_id": "E-010", "observation": {"kind": "confirmed", "confirmed_item_id": "metal_food_can"}, "replies": []}
+{"case_id": "E-011", "observation": {"kind": "confirmed", "confirmed_item_id": "metal_food_can"}, "replies": []}
+{"case_id": "E-012", "observation": {"kind": "confirmed", "confirmed_item_id": "metal_food_can"}, "replies": []}
+{"case_id": "E-013", "observation": {"kind": "confirmed", "confirmed_item_id": "office_paper"}, "replies": []}
+{"case_id": "E-014", "observation": {"kind": "confirmed", "confirmed_item_id": "office_paper"}, "replies": []}
+{"case_id": "E-015", "observation": {"kind": "confirmed", "confirmed_item_id": "office_paper"}, "replies": []}
+{"case_id": "E-016", "observation": {"kind": "confirmed", "confirmed_item_id": "corrugated_cardboard_box"}, "replies": []}
+{"case_id": "E-017", "observation": {"kind": "confirmed", "confirmed_item_id": "corrugated_cardboard_box"}, "replies": []}
+{"case_id": "E-018", "observation": {"kind": "confirmed", "confirmed_item_id": "corrugated_cardboard_box"}, "replies": []}
+{"case_id": "E-019", "observation": {"kind": "confirmed", "confirmed_item_id": "magazine_paper"}, "replies": []}
+{"case_id": "E-020", "observation": {"kind": "confirmed", "confirmed_item_id": "magazine_paper"}, "replies": []}
+{"case_id": "E-021", "observation": {"kind": "confirmed", "confirmed_item_id": "magazine_paper"}, "replies": []}
+{"case_id": "E-022", "observation": {"kind": "confirmed", "confirmed_item_id": "plain_paper_bag"}, "replies": []}
+{"case_id": "E-023", "observation": {"kind": "confirmed", "confirmed_item_id": "plain_paper_bag"}, "replies": []}
+{"case_id": "E-024", "observation": {"kind": "confirmed", "confirmed_item_id": "plain_paper_bag"}, "replies": []}
+{"case_id": "E-025", "observation": {"kind": "confirmed", "confirmed_item_id": "paper_tissue"}, "replies": []}
+{"case_id": "E-026", "observation": {"kind": "confirmed", "confirmed_item_id": "paper_tissue"}, "replies": []}
+{"case_id": "E-027", "observation": {"kind": "confirmed", "confirmed_item_id": "paper_tissue"}, "replies": []}
+{"case_id": "E-028", "observation": {"kind": "confirmed", "confirmed_item_id": "plastic_shopping_bag"}, "replies": []}
+{"case_id": "E-029", "observation": {"kind": "confirmed", "confirmed_item_id": "plastic_shopping_bag"}, "replies": []}
+{"case_id": "E-030", "observation": {"kind": "confirmed", "confirmed_item_id": "plastic_shopping_bag"}, "replies": []}
+{"case_id": "E-031", "observation": {"kind": "confirmed", "confirmed_item_id": "disposable_plastic_cup"}, "replies": []}
+{"case_id": "E-032", "observation": {"kind": "confirmed", "confirmed_item_id": "disposable_plastic_cup"}, "replies": []}
+{"case_id": "E-033", "observation": {"kind": "confirmed", "confirmed_item_id": "disposable_plastic_cup"}, "replies": []}
+{"case_id": "E-034", "observation": {"kind": "confirmed", "confirmed_item_id": "disposable_plastic_cutlery"}, "replies": []}
+{"case_id": "E-035", "observation": {"kind": "confirmed", "confirmed_item_id": "disposable_plastic_cutlery"}, "replies": []}
+{"case_id": "E-036", "observation": {"kind": "confirmed", "confirmed_item_id": "disposable_plastic_cutlery"}, "replies": []}
+{"case_id": "E-037", "observation": {"kind": "confirmed", "confirmed_item_id": "beverage_carton"}, "replies": []}
+{"case_id": "E-038", "observation": {"kind": "confirmed", "confirmed_item_id": "beverage_carton"}, "replies": []}
+{"case_id": "E-039", "observation": {"kind": "confirmed", "confirmed_item_id": "beverage_carton"}, "replies": []}
+{"case_id": "E-040", "observation": {"kind": "confirmed", "confirmed_item_id": "foil_lined_snack_packet"}, "replies": []}
+{"case_id": "E-041", "observation": {"kind": "confirmed", "confirmed_item_id": "foil_lined_snack_packet"}, "replies": []}
+{"case_id": "E-042", "observation": {"kind": "confirmed", "confirmed_item_id": "foil_lined_snack_packet"}, "replies": []}
+{"case_id": "E-043", "observation": {"kind": "confirmed", "confirmed_item_id": "glass_food_jar"}, "replies": []}
+{"case_id": "E-044", "observation": {"kind": "confirmed", "confirmed_item_id": "glass_food_jar"}, "replies": []}
+{"case_id": "E-045", "observation": {"kind": "confirmed", "confirmed_item_id": "glass_food_jar"}, "replies": []}
+{"case_id": "E-046", "observation": {"kind": "confirmed", "confirmed_item_id": "solid_food_scraps"}, "replies": []}
+{"case_id": "E-047", "observation": {"kind": "confirmed", "confirmed_item_id": "solid_food_scraps"}, "replies": []}
+{"case_id": "E-048", "observation": {"kind": "confirmed", "confirmed_item_id": "solid_food_scraps"}, "replies": []}
+{"case_id": "E-049", "observation": {"kind": "beverage_bottle"}, "replies": [{"question_key": "material", "facts": {"material": "plastic"}}]}
+{"case_id": "E-050", "observation": {"kind": "beverage_bottle"}, "replies": [{"question_key": "material", "facts": {"material": "glass"}}]}
+{"case_id": "E-051", "observation": {"kind": "drink_cup"}, "replies": [{"question_key": "material", "facts": {"material": "rigid_plastic"}}]}
+{"case_id": "E-052", "observation": {"kind": "drink_cup"}, "replies": [{"question_key": "material", "facts": {"material": "paper"}}]}
+{"case_id": "E-053", "observation": {"kind": "snack_packet"}, "replies": [{"question_key": "lining", "facts": {"detail": "metallic"}}]}
+{"case_id": "E-054", "observation": {"kind": "metal_can"}, "replies": [{"question_key": "package_type", "facts": {"detail": "food"}}]}
+{"case_id": "E-055", "observation": {"kind": "container"}, "replies": [{"question_key": "material", "facts": {"material": "glass"}}, {"question_key": "package_type", "facts": {"detail": "food_jar"}}]}
+{"case_id": "E-056", "observation": {"kind": "beverage_bottle"}, "replies": [{"question_key": "material", "facts": {}}, {"question_key": "item_label", "facts": {}}]}
+{"case_id": "E-057", "observation": {"kind": "confirmed", "confirmed_item_id": "paper_drink_cup"}, "replies": []}
+{"case_id": "E-058", "observation": {"kind": "confirmed", "confirmed_item_id": "sneaker"}, "replies": []}
+{"case_id": "E-059", "observation": {"kind": "confirmed", "confirmed_item_id": "aerosol_can"}, "replies": []}
+{"case_id": "E-060", "observation": {"kind": "no_clear_object"}, "replies": []}
