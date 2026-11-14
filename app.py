@@ -15,6 +15,7 @@ import streamlit as st
 from backend import Request, Response, demo_cases, load_live_backend, load_rules
 from integration import IntegratedBackend
 from photo import sanitize_photo
+from reco.client import OutputLimitError
 
 ROOT = Path(__file__).resolve().parent
 BACKEND_SPEC = os.getenv("RECYCLE_D_BACKEND", "").strip()
@@ -147,6 +148,9 @@ def wait_for_response():
     except TimeoutError:
         flow["error"] = "The request timed out. Please retry or start over."
         log_event(flow, "timeout", round((now - started) * 1000))
+    except OutputLimitError:
+        flow["error"] = "The recognition service could not finish its response. Please retry."
+        log_event(flow, "output_limit", round((now - started) * 1000))
     except Exception:
         flow["error"] = "The service could not complete the request. Please retry or start over."
         log_event(flow, "error", round((now - started) * 1000))
@@ -318,7 +322,8 @@ def render_interaction(flow):
                         f'<p class="lu-advice-text">{advice}</p></div>')
         with st.expander("Why this advice?"):
             basis = {
-                "model": "The photo recognition matched this supported item.",
+                "model": ("The photo recognition matched this supported item." if BACKEND_SPEC
+                          else "The scripted demo case matched this supported item."),
                 "user_answer": "Your clarification confirmed this item.",
                 "correction": "You selected this item using the correction control.",
             }

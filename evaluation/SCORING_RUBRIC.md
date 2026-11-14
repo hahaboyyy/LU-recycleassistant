@@ -1,0 +1,12 @@
+# Scoring protocol (frozen before final grading)
+
+The supplied E reference answers are the accepted evaluation baseline. Reference labels and images are not changed after viewing predictions.
+
+- **Action correctness:** exact match to E's initial expected action for baseline_photo/rules_photo, or E's final expected action for rules_interactive. This measures workflow decisions, not visual recognition accuracy.
+- **Structured identification:** exact item_id match where a supported item is expected. The free-text baseline has no item_id and is NA, not zero. This metric cannot support a direct baseline-vs-rules visual-identification comparison.
+- **Advice correctness:** exact normalized agreement is automatically accepted. Other answers are reviewed against the expected route, required preparation and accepted alternative destination. Equivalent English wording is allowed. Conflicting materials, campus-vs-community routes, unsupported destinations or required preparation omissions are failures. Do not require a building name when the reference advice itself does not name it. Do not award credit just for a fluent explanation.
+- **Question appropriateness:** on ambiguous cases, the first question must request the deciding attribute specified by E. The actual text and question key are retained. An unrelated condition or unsupported attribute is not accepted.
+- **Interactive information:** E's preset user answers are supplied only when the requested question_key matches the fixture, with at most two rounds. No answer is invented for a missing fixture. A question_without_fixture stop is a limitation of this protocol and is reported separately from an API failure.
+- **Review provenance:** exact comparisons and protocol-key checks are labelled automated; semantic advice judgments are labelled assistant_review with an explicit reason. No student/manual signoff is claimed. An unreviewed CSV is preserved alongside the scored CSV.
+- **Errors:** transport/provider errors, parse errors, unsupported-fixture stops and semantic errors remain distinct. Failures are retained rather than silently retried until successful.
+- **Interpretation:** this is one run on 60 supplied single-object images; 48 clear supported, 8 ambiguous, 3 unsupported and 1 unusable. Interactive results include extra user information. They are not photo-only accuracy, training results, or measured public-website/camera performance.

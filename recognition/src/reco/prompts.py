@@ -70,7 +70,20 @@ Rules:
 9. Set image_quality.usable to false only when the item cannot be judged at all
    (no object visible, severely blurred). List concrete issues such as "blurry",
    "too_dark", "too_far", "cropped", "glare", "occluded", "multiple_objects".
-10. All free text in English. Keep each evidence string under 12 words."""
+10. All free text in English. Keep each evidence string under 12 words.
+11. Compare physical construction before choosing a paper or container subtype.
+    Office paper can be printed, coloured, folded or crumpled; these alone do not
+    make it tissue or magazine paper. Tissue has a soft fibrous construction;
+    magazine/catalogue paper needs evidence of publication pages or coated stock.
+    A cup has a wide open rim; a beverage bottle has a neck and closure opening.
+    Food-service forks, knives and spoons remain cutlery regardless of colour;
+    call an object a toy only when there is visible evidence for that purpose.
+12. Never infer an inner lining from a brand, outer silver colour or packaging
+    category. Describe exposed interior evidence; otherwise mark lining unknown.
+    If candidates remain genuinely plausible, return unknown with those IDs.
+    Candidate IDs are alternatives requiring confirmation, not extra synonyms.
+13. Keep the JSON concise. Do not provide a step-by-step explanation or repeat
+    the catalogue in the output."""
 
 SYSTEM_PROMPT = SYSTEM_PROMPT_BASE + "\n\nOutput template:\n" + OUTPUT_SKELETON
 

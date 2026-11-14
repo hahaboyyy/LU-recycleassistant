@@ -68,9 +68,11 @@ New-Item -ItemType Directory -Force -Path .pytest_cache | Out-Null
 .\.venv\Scripts\python.exe -m unittest -q test_backend
 ```
 
-当前基线为 160 项 pytest 和 11 项 unittest。测试涵盖识别契约、16 个规则条目、开发流程、C 的回答回归、追问上限与页面状态。60 条 E 预设观察的回放验证判断流程。真实 API 曾通过塑料瓶和纸巾开发照片的联调，最终版本的正式视觉评估另行记录。
+当前基线为 177 项 pytest 和 11 项 unittest。测试涵盖识别契约、16 个规则条目、开发流程、C 的回答回归、追问上限与页面状态。60 条 E 预设观察的回放验证判断流程。真实 API 曾通过塑料瓶和纸巾开发照片的联调，最终版本的正式视觉评估另行记录。
 
 2026-11-13 在独立 Git 克隆和全新 Python 3.11 虚拟环境中，按 requirements-lock.txt 安装后，上述 160 项和 11 项检查均通过。
+
+2026-11-14 修复了名称匹配覆盖不确定候选的问题：物品 ID 无法确认但存在有效候选时，保留歧义并进入追问。新增 6 项回归测试，包括用户分别确认塑料瓶和玻璃瓶的整合流程；本地复跑 166 项 pytest 和 11 项 unittest 均通过。
 
 测试命令可在无密钥状态下运行。测试生成的缓存和日志位于本仓库的 .pytest_cache/ 和 runs/。
 
@@ -95,3 +97,30 @@ E 的原始清单保留随交付提供的审核元数据。正式运行其评估
 每位成员克隆仓库后安装依赖，并在自己的 .env 中配置 API 密钥即可运行。更新代码时使用 git pull。私有仓库需要由仓库所有者授予成员访问权限。
 
 代码的组内修改和成果归属由小组共同约定。照片使用随表记录的许可，复用时保留来源、作者和许可信息。
+
+
+## Repair release 15 November 2026
+
+# Repair evaluation 15 November 2026
+
+The measured release uses 4096 output tokens, one bounded transient retry, and at most one additional visual identity check for eligible uncertain categories. A length-limited reply is reported as OUTPUT_LIMIT. Explicit supported-item corrections can replace a mistaken candidate. Demo explanations identify scripted responses accurately.
+
+177 pytest checks and 11 backend checks passed locally. These are software checks, not image accuracy.
+
+| Metric | Result | 90% threshold |
+|---|---:|---|
+| Usable initial recognition responses | 60/60 (100%) | Met |
+| Photo-only exact IDs on clear supported images | 42/48 (87.5%) | Not met |
+| Secondary reference-informed simulated users, clear IDs | 47/48 (97.9%) | Met under this assisted simulation |
+
+The original three-arm primary comparison remains unchanged. Clear-item complete advice was 8/48 for the direct baseline and 42/48 for both integrated primary arms. Correct workflow action over all cases was 48/60, 51/60 and 53/60. A workflow action is not an item-identification score.
+
+The secondary simulation adds reference-name answers to five questions that lack an original E fixture. It is not photo-only accuracy, a real-user study or an independent held-out test. The same images have been used to analyse repairs. No labels or images were changed, and no failed row was silently replaced.
+
+Original run: formal60_2026-11-14. First repair: 58/60 usable, 43/48 clear IDs. Second repair: 60/60 usable, 42/48 clear IDs. All remain archived locally. Release raw responses contain 126 HTTP requests, including six identity-review requests; primary interactive rows reuse the initial observation.
+
+See summary.csv, per_case.csv, acceptance_results.json, assistance_summary.json and reference_assisted_replay.jsonl. Semantic advice ratings are assistant assessments with explicit reasons and still require the team's review. Source snapshots and image hashes are retained.
+
+The public Render service has not been reconfigured or re-accepted by this local experiment. See DEPLOYMENT.md for the live environment and validation steps. The backup recording and physical presentation-device check remain team tasks.
+
+Details: [experiment records](docs/experiments/2026-11-15/RELEASE_NOTES.md), [report](docs/Final_Report_EN.md), and [deployment](DEPLOYMENT.md).

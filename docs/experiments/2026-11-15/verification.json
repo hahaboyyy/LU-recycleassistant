@@ -1,0 +1,38 @@
+{
+  "checks": {
+    "sixty_cases_three_arms": true,
+    "normalized_raw_log_complete": true,
+    "all_scoring_cells_finished": true,
+    "all_scores_have_notes": true,
+    "source_snapshot_hashes_unchanged": true,
+    "dataset_hashes_unchanged": true,
+    "provider_image_hashes_match_frozen_inputs": true,
+    "baseline_and_improved_share_same_image": true,
+    "primary_configuration_constant": true,
+    "raw_log_real_provider": true,
+    "all_primary_http_responses_recorded": true,
+    "original_manifest_review_metadata_preserved": true,
+    "no_actual_api_key_or_private_env_files": true,
+    "original_unreviewed_sheet_retained": true
+  },
+  "all_checks_passed": true,
+  "rows": 180,
+  "unique_images": 60,
+  "primary_http_requests": 126,
+  "primary_http_statuses": {
+    "200": 126
+  },
+  "requested_models": {
+    "deepseek-v4-flash-vision-exp": 126
+  },
+  "returned_models": {
+    "deepseek-flash": 126
+  },
+  "provider_call_modes": {
+    "improved": 66,
+    "baseline": 60
+  },
+  "parse_repair_events": [],
+  "diagnostic_requests": 0,
+  "private_file_findings": []
+}

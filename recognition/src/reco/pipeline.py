@@ -12,6 +12,7 @@ compare them without hidden differences in how the image was sent.
 from __future__ import annotations
 
 import uuid
+import re
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from typing import Any
@@ -147,6 +148,38 @@ class Recognizer:
         if result is None:  # pragma: no cover - loop always breaks or raises
             raise RecognitionFailure("PARSE", last_reason or "no result")
 
+        if (not clarification.strip() and self.cfg.provider not in {"mock", "fixture"}
+                and self._needs_identity_review(result)):
+            # One extra visual check, without reference labels or user answers.
+            # Missing materials/linings still belong to clarification, not guessing.
+            review_messages = build_messages(prep, self._catalogue_block, "", self.cfg.strict_scope)
+            review_messages[0]["content"] += (
+                "\n\nThis is one visual identity review. Re-examine the original image, "
+                "especially object construction and visible edges. The following IDs "
+                "are hypotheses, not correct labels: " + ", ".join(self._review_candidates(result)) + ". "
+                "Use visible evidence to select the most appropriate catalogue item. "
+                "A printed or crumpled sheet can still be office paper. Check whether "
+                "a soft paper item is a facial tissue rather than a carrier bag. "
+                "Do not assume toy use from bright colour alone. You may keep unknown "
+                "when evidence is insufficient. Do not guess hidden material or lining."
+            )
+            try:
+                review = self.client.chat(review_messages)
+                calls += 1
+                latency_total += review.latency_ms
+                prompt_tokens += review.prompt_tokens or 0
+                completion_tokens += review.completion_tokens or 0
+                checked, _ = parse_result(review.text)
+                self._apply_catalogue(checked)
+                self._log("identity_review", prep, calls, ok=True, parse_ok=True,
+                          note=note, resp=review, item_id=checked.item_id,
+                          catalogue_status=checked.catalogue_status)
+                result = checked
+            except (LLMError, JSONExtractError, SchemaError) as exc:
+                self._log("identity_review", prep, calls + 1, ok=False,
+                          error_code=getattr(exc, "code", "PARSE"), note=note)
+                # The original valid uncertain result remains useful for a question.
+
         result.trace = Trace(
             run_id=self.run_id,
             created_at=_now(),
@@ -163,6 +196,31 @@ class Recognizer:
             catalogue_sha256=self.catalogue.sha256,
         )
         return result
+
+    def _review_candidates(self, result: RecognitionResult) -> list[str]:
+        candidates = list(result.item_id_candidates)
+        if result.catalogue_status == "out_of_scope":
+            alternatives = " ".join(result.identification.alternatives_en).casefold()
+            for item_id, item in self.catalogue.items.items():
+                labels = (item.item_name, *item.aliases)
+                if any(re.search(r"\b" + re.escape(label.casefold()) + r"\b", alternatives)
+                       for label in labels):
+                    candidates.append(item_id)
+        return list(dict.fromkeys(candidates))
+
+    def _needs_identity_review(self, result: RecognitionResult) -> bool:
+        if result.needs_new_photo:
+            return False
+        candidates = self._review_candidates(result)
+        if not candidates or result.catalogue_status not in {"ambiguous", "out_of_scope"}:
+            return False
+        scope_critical = {"disposable_plastic_cup", "foil_lined_snack_packet", "beverage_carton"}
+        if set(candidates) & scope_critical:
+            return False
+        materials = {self.catalogue.items[c].material.casefold() for c in candidates}
+        # Different-material candidates require user evidence. Similar paper
+        # categories or an explicit supported alternative can be checked visually.
+        return len(materials) == 1 or all("paper" in m for m in materials)
 
     # -- direct-answer baseline -----------------------------------------
     def baseline(self, image: str | bytes, *, note: str = "") -> BaselineResult:
@@ -218,7 +276,20 @@ class Recognizer:
             result.catalogue_item_name_en = ""
             return
 
-        hit = self.catalogue.resolve(raw) or self.catalogue.resolve(result.identification.name_en)
+        hit = self.catalogue.resolve(raw)
+        candidates = self.catalogue.resolve_many(result.item_id_candidates)
+        # Contradictory structured candidates are unresolved evidence, even when
+        # the primary ID is valid. Do not silently discard the alternatives.
+        if hit and any(candidate != hit for candidate in candidates):
+            candidates = list(dict.fromkeys([hit, *candidates]))
+            hit = None
+        if not hit and not candidates:
+            candidates = self.catalogue.resolve_many(result.identification.alternatives_en)
+
+        # An unresolved ID with candidates needs confirmation. A matching display
+        # name must not erase that uncertainty, even for one scope-limited item.
+        if not hit and not candidates:
+            hit = self.catalogue.resolve(result.identification.name_en)
         if hit:
             result.item_id = hit
             result.catalogue_item_name_en = self.catalogue.name_of(hit)
@@ -228,9 +299,6 @@ class Recognizer:
             ]
             return
 
-        candidates = self.catalogue.resolve_many(result.item_id_candidates)
-        if not candidates:
-            candidates = self.catalogue.resolve_many(result.identification.alternatives_en)
         result.item_id = "unknown"
         result.item_id_candidates = candidates
         result.catalogue_status = "ambiguous" if candidates else "unresolved"

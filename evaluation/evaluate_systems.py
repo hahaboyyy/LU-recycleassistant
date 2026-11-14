@@ -153,21 +153,31 @@ def invoke(predict, mode, image_path, history):
                 "latency_ms": round((time.perf_counter() - start) * 1000, 2)}
 
 
-def interactive(predict, first, image_path, case):
+def interactive(predict, first, image_path, case, *, fixture_policy="ordered"):
     calls = [first]
     history = []
+    used_answers = set()
     stop_reason = ""
     while calls[-1]["status"] == "ok" and calls[-1]["action"] == "clarify_item":
         next_turn = len(history) + 1
         if next_turn > 2:
             stop_reason = "turn_limit_exceeded"
             break
-        key = case[f"question_key_{next_turn}"]
         output = calls[-1]
+        answer_turn = next_turn
+        if fixture_policy == "by_key":
+            answer_turn = next((index for index in (1, 2)
+                                if index not in used_answers
+                                and case[f"question_key_{index}"]
+                                and case[f"question_key_{index}"] == output["question_key"]), 0)
+        elif fixture_policy != "ordered":
+            raise ValueError("Unknown fixture policy")
+        key = case.get(f"question_key_{answer_turn}", "")
         if not key or output["question_key"] != key:
             stop_reason = "question_without_fixture"
             break
-        history.append({"question": output["question"], "answer": case[f"user_answer_{next_turn}"]})
+        used_answers.add(answer_turn)
+        history.append({"question": output["question"], "answer": case[f"user_answer_{answer_turn}"]})
         calls.append(invoke(predict, "improved", image_path, [dict(turn) for turn in history]))
     return calls, history, stop_reason
 

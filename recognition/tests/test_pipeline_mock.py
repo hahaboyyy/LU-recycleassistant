@@ -1,5 +1,7 @@
 import json
 
+import pytest
+
 from reco.client import ChatClient
 from reco.config import load_config
 from reco.mock import MockClient
@@ -158,9 +160,48 @@ def test_resolver_turns_unknown_id_into_ambiguous_or_unresolved(tmp_path):
     assert ambiguous.needs_clarification is True
 
 
+@pytest.mark.parametrize(("item_id", "name", "candidates", "alternatives", "expected_candidates"), [
+    ("unknown", "Plastic beverage bottle",
+     ["plastic_beverage_bottle", "glass_beverage_bottle"], [],
+     ["plastic_beverage_bottle", "glass_beverage_bottle"]),
+    ("unknown", "Disposable plastic cup", ["disposable_plastic_cup"], [],
+     ["disposable_plastic_cup"]),
+    ("unknown", "Plastic beverage bottle", [], ["PET drink bottle", "glass soda bottle"],
+     ["plastic_beverage_bottle", "glass_beverage_bottle"]),
+    ("unrecognized_bottle_id", "Plastic beverage bottle",
+     ["plastic_beverage_bottle", "glass_beverage_bottle"], [],
+     ["plastic_beverage_bottle", "glass_beverage_bottle"]),
+])
+def test_resolver_preserves_candidates_before_name_fallback(
+    tmp_path, item_id, name, candidates, alternatives, expected_candidates
+):
+    rec, _ = _recognizer(tmp_path)
+    result = _bare_result(
+        item_id=item_id,
+        identification={"name_en": name, "alternatives_en": alternatives},
+        item_id_candidates=candidates,
+    )
+    rec._apply_catalogue(result)
+    assert result.item_id == "unknown"
+    assert result.catalogue_status == "ambiguous"
+    assert result.item_id_candidates == expected_candidates
+    assert result.catalogue_item_name_en == ""
+    assert result.needs_clarification is True
+
+
 def test_resolver_accepts_out_of_scope_marker(tmp_path):
     rec, _ = _recognizer(tmp_path)
     result = _bare_result(item_id="out-of-scope", identification={"name_en": "battery"})
     rec._apply_catalogue(result)
     assert result.catalogue_status == "out_of_scope"
     assert result.item_id == "out_of_scope"
+
+
+def test_primary_id_does_not_erase_conflicting_structured_candidate(tmp_path):
+    rec, _ = _recognizer(tmp_path)
+    result = _bare_result(item_id="magazine_paper", item_id_candidates=["office_paper"],
+                          identification={"name_en": "Magazine or catalogue paper"})
+    rec._apply_catalogue(result)
+    assert result.item_id == "unknown"
+    assert result.catalogue_status == "ambiguous"
+    assert result.item_id_candidates == ["magazine_paper", "office_paper"]

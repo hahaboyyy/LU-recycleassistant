@@ -81,3 +81,23 @@ def test_second_answer_can_resolve_and_manual_correction_can_replace_it():
     corrected = engine.decide(record, history, corrected_item_id="glass_food_jar")
     assert corrected.item_id == "glass_food_jar"
     assert corrected.confirmed_by == "correction"
+
+
+def test_container_question_accepts_explicit_correction_outside_original_candidates():
+    engine = decision_engine()
+    record = ambiguous("glass_food_jar")
+    first = engine.decide(record)
+    assert "food can" in first.question_en
+    assert first.question_key == "package_type"
+    result = engine.decide(record, ((first.question_en, "It was a metal can for food."),))
+    assert result.item_id == "metal_food_can"
+    assert result.confirmed_by == "user_answer"
+
+
+def test_container_question_does_not_guess_from_material_only():
+    engine = decision_engine()
+    record = ambiguous("glass_food_jar")
+    first = engine.decide(record)
+    result = engine.decide(record, ((first.question_en, "Metal"),))
+    assert not result.item_id
+

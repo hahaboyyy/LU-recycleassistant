@@ -69,6 +69,31 @@ def test_live_adapter_reuses_the_recognition_after_an_answer(monkeypatch):
     assert live.respond(corrected).item_id == "glass_beverage_bottle"
 
 
+@pytest.mark.parametrize(("answer", "expected_item_id"), [
+    ("Plastic", "plastic_beverage_bottle"),
+    ("Glass", "glass_beverage_bottle"),
+])
+def test_uncertain_named_bottle_waits_for_user_confirmation(monkeypatch, answer, expected_item_id):
+    client = ReplayClient(name="Plastic beverage bottle", candidates=CANDIDATES["beverage_bottle"])
+    recognizer = Recognizer(Config(provider="fixture", log_path="runs/test_fixture.jsonl"), client=client)
+    monkeypatch.setattr(integration, "live_recognizer", lambda: recognizer)
+    backend = IntegratedBackend()
+    request = Request((DATA_DIR / "development_photos/DEV-17.jpg").read_bytes(), "image/jpeg")
+
+    first = backend.respond(request)
+    assert first.status == "question"
+    assert first.question_key == "material"
+    assert first.recognition.item_id_candidates == list(CANDIDATES["beverage_bottle"])
+
+    monkeypatch.setattr(integration, "live_recognizer", lambda: pytest.fail("Recognition was called again"))
+    reply = replace(request, recognition=first.recognition, answers=((first.question, answer),))
+    final = backend.respond(reply)
+    assert final.status == "ready"
+    assert final.item_id == expected_item_id
+    assert final.confirmed_by == "user_answer"
+    assert final.advice == decision_engine().items[expected_item_id]["disposal_advice"]
+
+
 @pytest.mark.parametrize("case", FORMAL, ids=[row["case_id"] for row in FORMAL])
 def test_e_scripted_observation_through_integrated_evaluation_adapter(case, monkeypatch):
     observation = OBSERVATIONS[case["case_id"]]

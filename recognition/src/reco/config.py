@@ -51,7 +51,7 @@ class Config:
     timeout_s: float = 90.0
     max_retries: int = 2
     temperature: float = 0.0
-    max_tokens: int = 900
+    max_tokens: int = 4096
     json_mode: bool = True
     #: Ask the model not to confirm entries whose scope depends on an invisible property.
     strict_scope: bool = False
@@ -133,7 +133,7 @@ def load_config(provider: str | None = None, **overrides: object) -> Config:
         timeout_s=_env_float("RECO_TIMEOUT", 90.0),
         max_retries=int(_env_float("RECO_MAX_RETRIES", 2)),
         temperature=_env_float("RECO_TEMPERATURE", 0.0),
-        max_tokens=int(_env_float("RECO_MAX_TOKENS", 900)),
+        max_tokens=int(_env_float("RECO_MAX_TOKENS", 4096)),
         json_mode=os.environ.get("RECO_JSON_MODE", "1") not in {"0", "false", "no"},
         strict_scope=os.environ.get("RECO_STRICT_SCOPE", "0") not in {"0", "false", "no"},
         image_max_edge=int(_env_float("RECO_IMAGE_MAX_EDGE", 1280)),

@@ -158,7 +158,14 @@ class DecisionEngine:
                 return Question("material", "What material is the main item made of?",
                                 tuple((material, tuple(items)) for material, items in by_material.items()))
         choices = tuple((self.by_id[item_id]["item_name"], (item_id,)) for item_id in ids)
-        return Question("package_type", "Which item is shown in the photo?", choices)
+        if candidates <= {"glass_food_jar", "metal_food_can", "aluminium_beverage_can",
+                          "glass_beverage_bottle", "plastic_beverage_bottle"}:
+            # A photo may have supplied the wrong candidate. Let the user name
+            # the actual container instead of forcing the only proposed item.
+            return Question("package_type",
+                            "Was it a food can, drink can, food jar, or beverage bottle? "
+                            "Please include its material.", ())
+        return Question("package_type", "Which item is shown? Choose an item or describe the correct item.", choices)
 
     def _apply_reply(self, record: dict, reply: str) -> dict:
         state = dict(record)
@@ -188,8 +195,11 @@ class DecisionEngine:
                      "unsure", "unknown", "maybe", "probably", "might", "or")
         if any(_includes(answer, word) for word in uncertain):
             return None
+        # Explicit identity corrections may name another supported item. Material
+        # answers alone still only narrow the current candidates.
+        search_ids = tuple(self.by_id) if question.key == "package_type" else ids
         matches = []
-        for item_id in ids:
+        for item_id in search_ids:
             rule = self.by_id[item_id]
             labels = (item_id, rule["item_name"], *rule["aliases"])
             if any(_includes(answer, _normalized(label)) for label in labels):
@@ -198,6 +208,11 @@ class DecisionEngine:
             return (matches[0],)
         if len(matches) > 1:
             return None
+        if question.key == "package_type":
+            if _includes(answer, "can") and _includes(answer, "food"):
+                return ("metal_food_can",)
+            if _includes(answer, "can") and any(_includes(answer, word) for word in ("drink", "beverage")):
+                return ("aluminium_beverage_can",)
         if question.key == "lining":
             if _includes(answer, "no") or _includes(answer, "non metallic"):
                 return (OUTSIDE,)

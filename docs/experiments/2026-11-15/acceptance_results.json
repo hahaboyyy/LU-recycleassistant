@@ -1,0 +1,45 @@
+{
+  "request_success": {
+    "numerator": 60,
+    "denominator": 60,
+    "rate": 1.0,
+    "threshold": 0.9,
+    "passed": true,
+    "decision": "PASS"
+  },
+  "photo_identification": {
+    "numerator": 42,
+    "denominator": 48,
+    "rate": 0.875,
+    "threshold": 0.9,
+    "passed": false,
+    "decision": "NOT MET"
+  },
+  "secondary_simulated_user_identification": {
+    "numerator": 47,
+    "denominator": 48,
+    "rate": 0.9791666666666666,
+    "threshold": 0.9,
+    "passed": true,
+    "decision": "PASS"
+  },
+  "secondary_is_reference_informed": true,
+  "primary_both_gates_passed": false,
+  "request_success_display": "60/60 (100.0%)",
+  "baseline_request_success_display": "60/60 (100.0%)",
+  "photo_identification_display": "42/48 (87.5%)",
+  "assisted_identification_display": "42/48 (87.5%)",
+  "secondary_identification_display": "47/48 (97.9%)",
+  "advice_display": {
+    "baseline_photo": "8/48 (16.7%)",
+    "rules_photo": "42/48 (87.5%)",
+    "rules_interactive": "42/48 (87.5%)"
+  },
+  "latency_display": {
+    "baseline_photo": "2.07s",
+    "rules_photo": "3.62s",
+    "rules_interactive": "3.62s"
+  },
+  "interpretation": "Response reliability meets 90%; photo-only exact item ID does not. Secondary reference-informed simulated interaction exceeds 90% and must be labelled separately. No claim of 90% photo-only accuracy.",
+  "evaluation_scope": "Same-set regression after repairs; primary strict E protocol and secondary simulated user replay remain distinct."
+}

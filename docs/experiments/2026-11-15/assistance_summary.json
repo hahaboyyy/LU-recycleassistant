@@ -1,0 +1,14 @@
+{
+  "protocol": "Secondary reference-informed simulated users; designed after fixed-script stops were observed.",
+  "not_photo_only_accuracy": true,
+  "not_real_user_study": true,
+  "no_new_model_calls": true,
+  "clear_supported_identification_correct": 47,
+  "clear_supported_n": 48,
+  "supported_final_identification_correct": 53,
+  "supported_final_n": 54,
+  "correct_final_action": 58,
+  "cases": 60,
+  "answers_from_reference": 5,
+  "existing_by_key_cases": 60
+}

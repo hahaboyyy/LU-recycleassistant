@@ -66,6 +66,10 @@ class EmptyResponseError(LLMError):
     code = "EMPTY_RESPONSE"
 
 
+class OutputLimitError(LLMError):
+    code = "OUTPUT_LIMIT"
+
+
 @dataclass
 class LLMResponse:
     text: str
@@ -162,6 +166,11 @@ class ChatClient:
         text = _extract_text(data)
         usage = data.get("usage") or {}
         choice = (data.get("choices") or [{}])[0]
+        if choice.get("finish_reason") == "length":
+            raise OutputLimitError(
+                "The model reached its output limit. Increase RECO_MAX_TOKENS and retry.",
+                status=status, body=body,
+            )
         if not text.strip():
             raise EmptyResponseError(
                 f"model returned empty content (finish_reason={choice.get('finish_reason')})",

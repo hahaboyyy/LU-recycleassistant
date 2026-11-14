@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: lu-recycle-assistant
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python -m streamlit run app.py --server.address 0.0.0.0 --server.port $PORT --server.headless true
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.11
+      - key: PYTHONPATH
+        value: recognition/src
+      - key: RECYCLE_D_BACKEND
+        value: integration:create_live_backend
+      - key: RECYCLE_D_TIMEOUT
+        value: "35"
+      - key: RECO_PROVIDER
+        value: deepseek
+      - key: RECO_BASE_URL
+        value: https://api.deepseek.com/v1
+      - key: RECO_MODEL
+        value: deepseek-v4-flash-vision-exp
+      - key: RECO_MAX_TOKENS
+        value: "4096"
+      - key: RECO_MAX_RETRIES
+        value: "1"
+      - key: RECO_TIMEOUT
+        value: "15"
+      - key: RECO_API_KEY
+        sync: false

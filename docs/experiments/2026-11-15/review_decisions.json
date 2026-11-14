@@ -1,0 +1,194 @@
+{
+  "E-001|baseline_photo": {
+    "score": 0,
+    "reason": "A blue bin is not identified as the required plastic collection route; the material-specific destination is unsupported."
+  },
+  "E-002|baseline_photo": {
+    "score": 1,
+    "reason": "Emptying and rinsing plus a designated campus plastic recycling bin satisfy the accepted route and preparation."
+  },
+  "E-003|baseline_photo": {
+    "score": 1,
+    "reason": "Emptying, rinsing and campus plastic collection match; optional cap wording does not omit a required reference step."
+  },
+  "E-004|baseline_photo": {
+    "score": 0,
+    "reason": "Cap removal is omitted and an unspecified general recycling fallback is added."
+  },
+  "E-005|baseline_photo": {
+    "score": 0,
+    "reason": "Glass recycling is stated, but required cap removal is omitted."
+  },
+  "E-006|baseline_photo": {
+    "score": 0,
+    "reason": "The main glass route and preparation match, but an unsupported general-waste fallback conflicts with the accepted rule."
+  },
+  "E-007|baseline_photo": {
+    "score": 0,
+    "reason": "The main metal route and preparation match, but an unsupported general-waste fallback is added."
+  },
+  "E-008|baseline_photo": {
+    "score": 0,
+    "reason": "The main metal route matches, but an unspecified general recycling fallback is unsupported."
+  },
+  "E-009|baseline_photo": {
+    "score": 1,
+    "reason": "Emptying, rinsing and campus metal collection satisfy the accepted instruction."
+  },
+  "E-010|baseline_photo": {
+    "score": 0,
+    "reason": "Food cans require the accepted community metal route; campus metal/general-waste destinations do not match."
+  },
+  "E-011|baseline_photo": {
+    "score": 0,
+    "reason": "The community metal route is missing and a general-waste fallback is added."
+  },
+  "E-012|baseline_photo": {
+    "score": 0,
+    "reason": "The community metal route is missing; general-waste fallback and food-scrap wording also differ."
+  },
+  "E-013|baseline_photo": {
+    "score": 0,
+    "reason": "Required attachment removal is omitted."
+  },
+  "E-014|baseline_photo": {
+    "score": 0,
+    "reason": "Required attachment removal is omitted."
+  },
+  "E-015|baseline_photo": {
+    "score": 0,
+    "reason": "General waste conflicts with the accepted office-paper recycling route."
+  },
+  "E-016|baseline_photo": {
+    "score": 0,
+    "reason": "Required tape removal is omitted."
+  },
+  "E-017|baseline_photo": {
+    "score": 0,
+    "reason": "Required keep-dry preparation is omitted."
+  },
+  "E-018|baseline_photo": {
+    "score": 0,
+    "reason": "Required keep-dry preparation is omitted."
+  },
+  "E-019|baseline_photo": {
+    "score": 0,
+    "reason": "The accepted community paper route and keep-dry preparation are missing."
+  },
+  "E-020|baseline_photo": {
+    "score": 0,
+    "reason": "The answer treats the item as a framed object and omits the reference route and preparation."
+  },
+  "E-021|baseline_photo": {
+    "score": 0,
+    "reason": "The accepted community paper route and required preparation are missing."
+  },
+  "E-022|baseline_photo": {
+    "score": 0,
+    "reason": "Attachment removal is included, but the accepted community route and keep-dry instruction are missing."
+  },
+  "E-023|baseline_photo": {
+    "score": 0,
+    "reason": "General waste conflicts with the fixed accepted paper-bag rule."
+  },
+  "E-024|baseline_photo": {
+    "score": 0,
+    "reason": "The community route and attachment-removal preparation are missing."
+  },
+  "E-025|baseline_photo": {
+    "score": 1,
+    "reason": "Campus general waste matches the reference tissue instruction."
+  },
+  "E-026|baseline_photo": {
+    "score": 0,
+    "reason": "The answer addresses incense and a tray, and suggests separate paper recycling; it does not provide the reference tissue instruction."
+  },
+  "E-027|baseline_photo": {
+    "score": 1,
+    "reason": "Campus general waste matches the reference tissue instruction."
+  },
+  "E-028|baseline_photo": {
+    "score": 0,
+    "reason": "The accepted community plastics route and empty/clean preparation are missing."
+  },
+  "E-029|baseline_photo": {
+    "score": 0,
+    "reason": "General waste conflicts with the fixed accepted plastic-bag rule."
+  },
+  "E-030|baseline_photo": {
+    "score": 0,
+    "reason": "The answer focuses on cans and lacks the accepted bag preparation and community plastics route."
+  },
+  "E-031|baseline_photo": {
+    "score": 0,
+    "reason": "The community plastics route is missing and a general-waste fallback is added."
+  },
+  "E-032|baseline_photo": {
+    "score": 0,
+    "reason": "The community plastics route is missing and a general-waste fallback is added."
+  },
+  "E-033|baseline_photo": {
+    "score": 0,
+    "reason": "The required community plastics route is missing."
+  },
+  "E-034|baseline_photo": {
+    "score": 0,
+    "reason": "The advice rejects plastic cutlery recycling and gives general waste, contrary to the accepted reference."
+  },
+  "E-035|baseline_photo": {
+    "score": 0,
+    "reason": "The reference community plastics route and rinsing instruction are missing."
+  },
+  "E-036|baseline_photo": {
+    "score": 0,
+    "reason": "General waste for a toy conflicts with the reference cutlery route and preparation."
+  },
+  "E-037|baseline_photo": {
+    "score": 0,
+    "reason": "Cut-open and cap-removal preparation and the community beverage-carton route are missing."
+  },
+  "E-038|baseline_photo": {
+    "score": 0,
+    "reason": "Cut-open and cap-removal preparation and the community beverage-carton route are missing."
+  },
+  "E-039|baseline_photo": {
+    "score": 0,
+    "reason": "Paper/general-waste destinations conflict with the accepted beverage-carton route; required preparation is missing."
+  },
+  "E-040|baseline_photo": {
+    "score": 1,
+    "reason": "Campus general waste matches the foil-lined packet rule."
+  },
+  "E-041|baseline_photo": {
+    "score": 1,
+    "reason": "Campus general waste matches the foil-lined packet rule."
+  },
+  "E-042|baseline_photo": {
+    "score": 1,
+    "reason": "Campus general waste matches the foil-lined packet rule."
+  },
+  "E-043|baseline_photo": {
+    "score": 0,
+    "reason": "The accepted community glass-container route is missing and a general-waste fallback is added."
+  },
+  "E-044|baseline_photo": {
+    "score": 0,
+    "reason": "The accepted community glass-container route is missing and a general-waste fallback is added."
+  },
+  "E-045|baseline_photo": {
+    "score": 0,
+    "reason": "The accepted community glass-container route is missing."
+  },
+  "E-046|baseline_photo": {
+    "score": 0,
+    "reason": "Required packaging/cutlery separation and staff-check guidance are missing."
+  },
+  "E-047|baseline_photo": {
+    "score": 0,
+    "reason": "Required packaging/cutlery separation and staff-check guidance are missing."
+  },
+  "E-048|baseline_photo": {
+    "score": 0,
+    "reason": "Required cutlery separation and staff-check guidance are missing; additional crate advice does not satisfy them."
+  }
+}

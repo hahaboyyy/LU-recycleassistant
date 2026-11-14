@@ -1,0 +1,4 @@
+arm,cases,action_correct,action_n,clear_supported_advice_correct,clear_supported_n,ambiguous_action_correct,ambiguous_n,error_cases,fixture_stops
+baseline_photo,60,48,60,8,48,0,8,0,0
+rules_photo,60,51,60,42,48,5,8,0,0
+rules_interactive,60,53,60,42,48,7,8,0,5
