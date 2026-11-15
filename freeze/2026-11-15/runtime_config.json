@@ -1,0 +1,31 @@
+{
+  "version": "frozen-2026-11-15",
+  "recognition": {
+    "provider": "deepseek",
+    "base_url": "https://api.deepseek.com/v1",
+    "model": "deepseek-v4-flash-vision-exp",
+    "timeout_s": 15.0,
+    "max_retries": 1,
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "json_mode": true,
+    "strict_scope": false,
+    "image_max_edge": 1280,
+    "jpeg_quality": 85
+  },
+  "application": {
+    "backend": "integration:create_live_backend",
+    "timeout_s": 35.0,
+    "one_main_object": true,
+    "max_clarification_rounds": 2
+  },
+  "evaluation": {
+    "seed": 521,
+    "primary_fixture_policy": "ordered",
+    "report_first_and_user_assisted_separately": true,
+    "retain_failed_cases": true,
+    "change_system_to_reach_target": false
+  },
+  "credentials": "The root .env includes a temporary public demo API key, explicitly authorized by the project owner. Revoke it at the provider after the presentation.",
+  "external_service": "Endpoint and requested model alias are fixed. Hosted backend weights are outside this repository; retain returned model labels in every run."
+}

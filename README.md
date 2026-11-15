@@ -10,14 +10,14 @@
 python --version
 python -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements-lock.txt
-Copy-Item .env.example .env
+# Keep the included .env for the temporary live demo.
 ```
 
 requirements-lock.txt 固定了本次复现验证使用的依赖版本，包含 pytest。日常只安装应用依赖时可使用 requirements.txt，需要测试则使用 requirements-dev.txt。
 
 **启动真实识别**
 
-用编辑器打开刚复制的 .env，在 RECO_API_KEY 后填写小组分配给你的可用密钥。模板保留了本次成功调用使用的端点和模型 ID，若小组换了服务，请同时更新 RECO_BASE_URL 和 RECO_MODEL。
+本次临时演示版已按项目所有者的明确授权包含 .env 和共享 API key，安装依赖后即可启动真实识别，无需另外填写密钥。请保留现有 .env，避免用空模板覆盖。演示结束后，项目所有者将在 API 服务商后台撤销共享 key；撤销后需要提供新的可用密钥。固定配置和校验方法见 [FREEZE.md](FREEZE.md)。
 
 ```powershell
 .\Start-Demo.ps1 -Live -Port 8502
@@ -50,8 +50,8 @@ requirements-lock.txt 固定了本次复现验证使用的依赖版本，包含 
 ```bash
 python3.11 -m venv .venv
 .venv/bin/python -m pip install -r requirements-lock.txt
-cp .env.example .env
-# Edit .env and set RECO_API_KEY before using live mode.
+# Keep the included .env for the temporary live demo.
+# The included .env contains the temporary live-demo configuration.
 export PYTHONPATH="$PWD/recognition/src"
 export RECO_ENV_FILE="$PWD/.env"
 export RECYCLE_D_BACKEND="integration:create_live_backend"

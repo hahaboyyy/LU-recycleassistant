@@ -1,0 +1,41 @@
+{
+  "version": "frozen-2026-11-15",
+  "created_at": "2026-11-15T13:44:47.766771+08:00",
+  "user_authorized_freeze": true,
+  "base_commit": "46de9da4c8dac53bd270d634799384d1554c9bb6",
+  "base_tree": "29f22db0b6f031a823f315c40835c8a39f6361a8",
+  "frozen_base_file_count": 169,
+  "manifest": "files.sha256.csv",
+  "manifest_sha256": "d4f0e0ac8d08fdb7376547beee24d052f108ffd07bf02de76aff97491964a40a",
+  "runtime_config_sha256": "25c86c02b8b4b194d586ca512f90525c3163f61fb689fbb30754d14fec7959f3",
+  "application_code_and_prompts_changed_for_freeze": false,
+  "base_files_match_remote": false,
+  "base_files_unchanged_during_validation": true,
+  "pytest_passed": 177,
+  "backend_tests_passed": 11,
+  "tests": [
+    {
+      "name": "pytest",
+      "exit_code": 0,
+      "log": "pytest.log"
+    },
+    {
+      "name": "unittest",
+      "exit_code": 0,
+      "log": "unittest.log"
+    }
+  ],
+  "new_visual_experiment_performed": false,
+  "new_physical_camera_or_public_service_acceptance": false,
+  "historical_evaluation": "Existing 60 images have influenced development. Freezing now does not make earlier or later same-set evaluations independent held-out tests.",
+  "reporting_policy": "Report observed results and failures as measured. A numeric target does not justify further tuning on this evaluation set.",
+  "publish_scope": "Freeze metadata, reproduction instructions and root .env with the explicitly authorized temporary public demo key. No other private settings or credentials.",
+  "frozen_file_count": 170,
+  "base_file_differences": [
+    "README.md"
+  ],
+  "code_prompt_rule_and_dataset_files_unchanged": true,
+  "public_demo_credential_explicitly_authorized": true,
+  "public_demo_credential_authorized_at": "2026-11-15T13:56:19.555678+08:00",
+  "post_demo_credential_action": "The project owner will revoke the shared API key at the provider after the presentation. Removing a file from GitHub does not revoke a credential."
+}
